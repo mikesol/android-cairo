@@ -37,10 +37,17 @@ LIBPIXMAN_SRC= \
 LIBPIXMAN_CFLAGS:=-D_USE_MATH_DEFINES -DPIXMAN_NO_TLS -DPACKAGE="android-cairo" -DUSE_ARM_NEON -DUSE_ARM_SIMD -include "limits.h"
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := cpufeatures
+LOCAL_SRC_FILES := cpufeatures/cpu-features.c
+LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)
+include $(BUILD_STATIC_LIBRARY)
+
+include $(CLEAR_VARS)
 
 LOCAL_MODULE    := libpixman
 LOCAL_CFLAGS    := -O2 $(LIBPIXMAN_CFLAGS) \
     -Ijni/pixman/pixman -Ijni/pixman-extra \
+    -Ijni/cpufeatures \
     -include "pixman-elf-fix.h" \
     -Wno-missing-field-initializers
 LOCAL_LDFLAGS   := 

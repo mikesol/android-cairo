@@ -1,3 +1,5 @@
+LOCAL_PATH := $(call my-dir)
+
 LIBCAIRO_SRC = \
 	       cairo/src/cairo-analysis-surface.c            \
 	       cairo/src/cairo-arc.c                         \
