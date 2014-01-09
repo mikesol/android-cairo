@@ -1,3 +1,18 @@
+GUIDO README!!
+==============
+
+To build these two libraries, do the following from the root directory
+of this submodule.
+
+    git submodule init
+    git submodule update
+    cp jni/pixman.mk jni/Android.mk
+    ndk-build
+    cp jni/cairo.mk jni/Android.mk
+    ndk-build
+
+original readme
+===============
 This repository contains Android build files and various additional
 files needed to build your self a version of libcairo and libpixman
 that you can use on Android devices.
