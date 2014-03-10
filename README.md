@@ -6,10 +6,7 @@ of this submodule.
 
     git submodule init
     git submodule update
-    cp jni/pixman.mk jni/Android.mk
-    ndk-build
-    cp jni/cairo.mk jni/Android.mk
-    ndk-build
+    ./autogen.sh
 
 original readme
 ===============
